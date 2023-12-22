@@ -1,0 +1,102 @@
+/* CSS for Amazon Footer */
+
+footer {
+    background-color: #04132b;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #e8dede;
+    margin-top: 20px;
+}
+
+footer div {
+    flex: 1;
+    margin-right: 20px;
+}
+
+footer h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    margin-bottom: 5px;
+}
+
+footer li a {
+    color: #000;
+    text-decoration: none;
+}
+
+footer li a:hover {
+    text-decoration: underline;
+}
+
+/* 
+.sub-footer {
+    background-color: #232f3e;
+    color: #fff;
+    display: flex;
+ justify-content: space-between;
+}
+
+.sub-footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-footer li {
+    margin-bottom: 8px;
+}
+
+.sub-footer p {
+    margin: 0;
+}
+
+.sub-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-footer a:hover {
+    text-decoration: underline;
+} */
+.sub-footer {
+    background-color: #232f3e;
+    color: #fff;
+    padding: 20px;
+    margin: auto;
+}
+
+.sub-footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.sub-footer li {
+    margin-bottom: 8px;
+}
+
+.sub-footer a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.sub-footer a:hover {
+    text-decoration: underline;
+}

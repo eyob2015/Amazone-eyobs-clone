@@ -1,0 +1,62 @@
+/* Subtotal.css */
+
+.subtotal {
+  background-color: #f3f3f3;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.subtotal__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtotal__price {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #b12704; /* Amazon's subtotal color */
+}
+
+.subtotal__gift {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.subtotal__gift input {
+  margin-right: 5px;
+}
+
+.subtotal__gift label {
+  font-size: 14px;
+}
+
+.subtotal input[type="text"] {
+  padding: 8px;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.subtotal button {
+  background-color: #f0c14b; /* Amazon's proceed to checkout button color */
+  border: 1px solid #a88734;
+  padding: 10px;
+  font-size: 16px;
+  color: #111;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 3px;
+  &:hover {
+    background-color: #ddb347; /* Hover color */
+  }
+}

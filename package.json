@@ -1,0 +1,41 @@
+{
+  "name": "amazon-clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "eyob ",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.0",
+    "@mui/material": "^5.15.0",
+    "@stripe/react-stripe-js": "^2.4.0",
+    "appwrite": "^13.0.1",
+    "axios": "^1.6.2",
+    "express": "^4.18.2",
+    "firebase": "^10.7.1",
+    "react": "^18.2.0",
+    "react-formatted-number": "^0.0.0",
+    "react-router-dom": "^6.21.0",
+    "react-script": "^2.0.5",
+    "react-scripts": "^5.0.1",
+    "react-stripe": "^0.1.0",
+    "stripe": "^14.9.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
