@@ -5,15 +5,19 @@ import Home from "./Home";
 import Login from "./Login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Checkout from "./Checkout";
+import PaymentSuccess from "./PaymentSuccess";
+
 
 import { useStateValue } from "./StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Footer from "./Footer";
 import Payment from "./Payment";
+import Orders from "./Orders"
+import Order from "./Order"
 import {auth} from "./firebase"
 const promise = loadStripe(
-  "pk_test_51O8YhpGkdXfH1ONgplcfTVIAsv0ej9nzFrXDzyslOumXGiJn4IYxuAZWN8dhccVaxz9Wi42kieYkM4T5dAblu8a7008WkcT99t"
+  "pk_test_51OVLc2HjxnpOvxRWl5YIZ6YlWUdabpFjF1hHlMRS0aNUBrY4LdCjd4jTKgvToLjzeuKhKHePgJosQokqtXu9RL8V002dPdJwiw"
 );
 
 
@@ -58,6 +62,9 @@ useEffect(() => {
               </Elements>
             }
           ></Route>
+           <Route path="/PaymentSuccess" element={<PaymentSuccess />} />
+           <Route path="/Orders" element={<Orders />} />
+           <Route path="/Order" element={<Order />} />
         </Routes>
         <Footer />
       </div>

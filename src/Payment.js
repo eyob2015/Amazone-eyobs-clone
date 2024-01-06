@@ -23,12 +23,29 @@ function Payment() {
 
   useEffect(() => {
     // Generate the special Stripe secret which allows us to charge a customer
-    const getClientSecret = async () => {
+    /* const getClientSecret = async () => {
       const response = await axios.post(`/payments/create?total=${getBasketTotal(basket) * 100}`);
       setClientSecret(response.data.clientSecret);
     };
+    
 
-    getClientSecret();
+    getClientSecret(); */
+    const getClientSecret = async () => {
+      try {
+        const totalAmount = Math.round(getBasketTotal(basket) * 100); // Ensure a valid positive integer
+        if (totalAmount < 1) {
+          throw new Error('Invalid total amount');
+        }
+    
+        const response = await axios.post(`/payments/create?total=${totalAmount}`);
+        setClientSecret(response.data.clientSecret);
+      } catch (error) {
+        console.error('Error getting client secret:', error);
+        // Handle error, display a message, or redirect to an error page
+      }
+    };
+    getClientSecret()
+
   }, [basket]);
 
   const handleSubmit = async (event) => {
@@ -55,8 +72,8 @@ function Payment() {
       dispatch({
         type: 'EMPTY_BASKET'
       });
-
-      navigate('/orders');
+      navigate('/PaymentSuccess');
+      //navigate('/orders');
     });
   };
 

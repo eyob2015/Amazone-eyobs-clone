@@ -1,0 +1,41 @@
+/* PaymentSuccess.css */
+
+.paymentSuccess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .paymentSuccess__container {
+    text-align: center;
+  }
+  
+  .paymentSuccess h1 {
+    font-size: 2.5rem;
+    color: #0066c0; /* Amazon's blue color */
+    margin-bottom: 10px;
+  }
+  
+  .paymentSuccess p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .paymentSuccess__redirectButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #f0c14b; /* Amazon's yellow color */
+    color: #111;
+    border: 1px solid #a88734; /* Darker shade for border */
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #ddb347; /* Darker shade on hover */
+    }
+  }
+  
