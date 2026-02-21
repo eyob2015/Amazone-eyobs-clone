@@ -1,23 +1,22 @@
-// Login.js
 import React, { useState } from "react";
 import "./Login.css";
-import { Link, useNavigate } from "react-router-dom";
-import { auth } from './firebase'; // Adjust the path to your firebase.js file
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { auth } from './firebase';
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // If sent here from a protected page, go back there after login
+  const from = location.state?.from?.pathname || "/";
 
   const signIn = async (e) => {
     e.preventDefault();
-
     try {
-      // Use Firebase authentication API to sign in
       await auth.signInWithEmailAndPassword(email, password);
-
-      // Redirect the user to the desired page (e.g., home)
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (error) {
       alert(error.message);
     }
@@ -25,13 +24,9 @@ function Login() {
 
   const register = async (e) => {
     e.preventDefault();
-
     try {
-      // Use Firebase authentication API to create a new user with email and password
       await auth.createUserWithEmailAndPassword(email, password);
-
-      // Redirect the user to the desired page (e.g., home)
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (error) {
       alert(error.message);
     }
@@ -48,22 +43,32 @@ function Login() {
       </Link>
 
       <div className="login__container">
-        <h1>Sign-in</h1>
+        <h1>Sign in</h1>
 
         <form>
-          <h5>E-mail</h5>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <div className="login__formGroup">
+            <label htmlFor="login-email">Email or mobile phone number</label>
+            <input
+              id="login-email"
+              type="text"
+              placeholder="email@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-          <h5>Password</h5>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="login__formGroup">
+            <label htmlFor="login-password">Password</label>
+            <input
+              id="login-password"
+              type="password"
+              placeholder="At least 6 characters"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <span className="login__forgot">Forgot your password?</span>
 
           <button
             type="submit"
@@ -74,11 +79,13 @@ function Login() {
           </button>
         </form>
 
-        <p>
-          By signing in, you agree to the AMAZON FAKE CLONE Conditions of Use &
-          Sale. Please see our Privacy Notice, our Cookies Notice, and our
-          Interest-Based Ads Notice.
+        <p className="login__legalText">
+          By continuing, you agree to Amazon's{" "}
+          <a href="#">Conditions of Use</a> and{" "}
+          <a href="#">Privacy Notice</a>.
         </p>
+
+        <div className="login__divider"><span>New to Amazon?</span></div>
 
         <button onClick={register} className="login__registerButton">
           Create your Amazon Account

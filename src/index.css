@@ -1,15 +1,50 @@
-* {
+:root {
+  --amazon-dark:     #131921;
+  --amazon-mid:      #232f3e;
+  --amazon-nav:      #37475a;
+  --amazon-orange:   #febd69;
+  --amazon-orange-hover: #f3a847;
+  --amazon-yellow:   #f0c14b;
+  --amazon-yellow-hover: #ddb347;
+  --amazon-red:      #b12704;
+  --amazon-link:     #007185;
+  --amazon-text:     #0f1111;
+  --amazon-gray:     #565959;
+  --amazon-light-bg: #eaeded;
+  --amazon-border:   #ddd;
+  --amazon-white:    #ffffff;
+  --radius-sm: 3px;
+  --radius-md: 8px;
+  --shadow-sm: 0 2px 5px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.18);
+  --transition: 0.18s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: rgb(234, 237, 237);
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  background-color: var(--amazon-light-bg);
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 14px;
+  color: var(--amazon-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
 }
 
 code {
