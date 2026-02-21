@@ -1,0 +1,122 @@
+/* Link wrapper — reset all anchor styles */
+.product__link {
+  display: contents;
+  color: inherit;
+  text-decoration: none;
+}
+.product__link:hover { text-decoration: none; }
+
+/* ── Product Card ─────────────────────────────────────────── */
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  background-color: var(--amazon-white);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.product:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* Image */
+.product__imageWrapper {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  background: #f7f7f7;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.product > img,
+.product__imageWrapper img {
+  max-height: 160px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform var(--transition);
+}
+
+.product:hover img { transform: scale(1.04); }
+
+/* Info */
+.product__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.product__info p {
+  font-size: 13px;
+  color: var(--amazon-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.product__price {
+  margin-top: 4px;
+  font-size: 18px;
+  color: var(--amazon-text);
+}
+.product__price small {
+  font-size: 12px;
+  vertical-align: super;
+}
+.product__price strong { font-weight: 700; }
+
+/* Rating */
+.product__rating {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  margin-top: 4px;
+}
+.product__rating .star-filled { color: #ff9900; font-size: 16px !important; }
+.product__rating .star-empty  { color: #ddd;    font-size: 16px !important; }
+
+/* Prime badge */
+.product__prime {
+  display: inline-block;
+  color: var(--amazon-link);
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 2px;
+  letter-spacing: 0.3px;
+}
+
+/* Button */
+.product > button {
+  background: var(--amazon-yellow);
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  border-radius: 20px;
+  color: var(--amazon-text);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 0;
+  width: 100%;
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.product > button:hover,
+.product > button:focus {
+  background-color: var(--amazon-yellow-hover);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  outline: none;
+}

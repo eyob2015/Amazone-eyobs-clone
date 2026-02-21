@@ -1,0 +1,47 @@
+/* ── Single Order card ──────────────────────────────────────── */
+.order {
+  padding: 24px;
+  margin: 16px 0;
+  border: 1px solid var(--amazon-border);
+  border-radius: var(--radius-md);
+  background: var(--amazon-white);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.order__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--amazon-border);
+  margin-bottom: 16px;
+}
+
+.order__date {
+  font-size: 13px;
+  color: var(--amazon-gray);
+}
+
+.order__id {
+  font-size: 11px;
+  color: var(--amazon-gray);
+  word-break: break-all;
+}
+
+.order__total {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--amazon-red);
+  text-align: right;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .order { padding: 16px 12px; }
+  .order__header { flex-direction: column; align-items: flex-start; }
+  .order__total  { text-align: left; }
+}
+  
